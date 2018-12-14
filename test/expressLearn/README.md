@@ -62,7 +62,7 @@ app.use('/a/', express.static('./public/'))
 ```
 
 ## express 使用
-	[art-template-官网](http://aui.github.io/art-template/)
+	[art-template-官网](http://aui.github.io/art-template)
 - 安装
 - 配置
 		app.engine('html',require('express-art-template'))
@@ -102,7 +102,8 @@ var bodyParser = require('body-parser')
 ## body-parser 解析表单 post 请求体
 
 ## 封装异步API
-	> 定时器是异步的，不会等它结束，下面的代码就会执行
+
+> 定时器是异步的，不会等它结束，下面的代码就会执行
 
 ### 如果需要获取一个函数中异步操作的结果，则必须通过回调函数获取
 如：
