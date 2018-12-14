@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板-express</title>
+	<!-- 导入bootstrap的新版本样式不正确，需要导入3.3.7版本 -->
+	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+	<div class="container header">
+		<div class="page-header">
+			<h1>首页 <small>留言板列表</small></h1>
+			<a href="post" class="btn btn-success">发表留言</a>
+		</div>
+		<div class="comments container">
+			<ul class="list-group">
+				{{ each comments}}
+					<li class="list-group-item">{{ $value.name }} 说： {{ $value.message}} <span class="pull-right">{{ $value.dataTime }}</span>
+					</li>
+				{{ /each }}
+					
+			</ul>
+		</div>
+	</div>
+	<script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板</title>
+	<link rel="stylesheet" href="public/lib/_bootstrap@3.3.7@bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+	<div class="container header">
+		<div class="page-header">
+			<h1><a href="/">首页</a> <small>发表留言</small></h1>
+		</div>
+		<div class="comments container">
+			<!-- 
+				以前提交表单如何提交？
+					表单中需要提交的表单控件元素必须具有name属性 
+					表单提交分为两种：
+						1. 默认的提交行为
+						2. 表单异步提交
+					action 就是表单提交地址
+					method 请求方法
+						get
+						post
+			-->
+			<form action="/pinglun" method="get">
+				<div class="form-group">
+					<label for="name">你的大名</label>
+					<input type="text" class="form-control" id="name" name="name" required minlength="2" maxlength="10" placeholder="Your name">
+				</div>
+				<div class="form-group">
+					<label for="content">留言内容</label>
+					<textarea type="textarea" class="form-control" id="content" name="message" required cols="30" rows="10" minlength="5" maxlength="20" placeholder="message content"></textarea>
+				</div>
+				<button class="btn">发表</button>
+			</form>
+		</div>
+	</div>
+	<script src="public/lib/_bootstrap@3.3.7@bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

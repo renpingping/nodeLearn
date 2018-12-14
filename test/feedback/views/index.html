@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板</title>
+	<!-- 服务器端的路径都是绝对路径 -->
+	<link rel="stylesheet" href="public/lib/_bootstrap@3.3.7@bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+	<div class="container header">
+		<div class="page-header">
+			<h1>首页 <small>留言板列表</small></h1>
+			<a href="post" class="btn btn-success">发表留言</a>
+		</div>
+		<div class="comments container">
+			<ul class="list-group">
+				{{ each comments}}
+					<li class="list-group-item">{{ $value.name }} 说： {{ $value.message}} <span class="pull-right">{{ $value.dataTime }}</span>
+					</li>
+				{{ /each }}
+					
+			</ul>
+		</div>
+	</div>
+	<script src="public/lib/_bootstrap@3.3.7@bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
