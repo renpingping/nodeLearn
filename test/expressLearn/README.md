@@ -62,7 +62,7 @@ app.use('/a/', express.static('./public/'))
 ```
 
 ## express 使用
-	[art-template-官网](http://aui.github.io/art-template)
+[art-template-官网](http://aui.github.io/art-template)
 - 安装
 - 配置
 		app.engine('html',require('express-art-template'))
