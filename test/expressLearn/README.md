@@ -1,9 +1,9 @@
 # express
 ## 修改完代码自动重启
-	可以使用第三方的命令行工具，`nodemon` 来解决频繁修改代码重启服务器问题
-	`nodemon`是一个基于Node.js开发的，需要独立安装：
-		npm install --global nodemon 
-	安装后，使用：
+可以使用第三方的命令行工具，`nodemon` 来解决频繁修改代码重启服务器问题
+`nodemon`是一个基于Node.js开发的，需要独立安装：
+npm install --global nodemon 
+安装后，使用：
 	```javascript
 	node app.js
 	# 使用 nodemon
@@ -12,22 +12,22 @@
 	```
 	当文件变化时，它会自动重启服务器
 ## express 基本路由
-	路由其实就是一张表，有具体的映射关系
-	请求路径 + 请求方法 + 请求处理函数
-	get:
-		```javascript
-		app.get('/', function(req, res){
-			res.send('for get /')
-		})
+路由其实就是一张表，有具体的映射关系
+请求路径 + 请求方法 + 请求处理函数
+get:
+	```javascript
+	app.get('/', function(req, res){
+		res.send('for get /')
+	})
 
-		```
-	post:
-		```javascript
-		app.get('/', function(req, res){
-			res.send('for post /')
-		})
+	```
+post:
+	```javascript
+	app.get('/', function(req, res){
+		res.send('for post /')
+	})
 
-		```
+	```
 ##  静态资源 （公开指定目录）
 - 第一种：
     这样就可以通过 /public/xx 的方式访问 public 目录中的所有资源
@@ -64,9 +64,9 @@
 ## 在 express 中获取 post 请求体数据
 	安装一个 body-parser 插件
 	安装：
-		npm install --save body-parser
+		```shell npm install --save body-parser ```
 	配置：
-		var bodyParser = require('body-parser')
+		```shell var bodyParser = require('body-parser') ```
 		通过 req.body 就可以来获取表单 post 请求体数据
 
 ## body-parser 解析表单 post 请求体
@@ -76,7 +76,7 @@
 
 ### 如果需要获取一个函数中异步操作的结果，则必须通过回调函数获取
 	如：
-	```javascript
+```javascript
 	function fn(callback){
 		// 现在相当于 var callback = funtion (data) { console.log(data) }
 		setTimeout(function() {
@@ -89,7 +89,7 @@
 		console.log(data)
 	})
 
-	```
+```
 
 ## 自己编写的步骤
 - 处理模板
