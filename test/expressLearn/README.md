@@ -4,14 +4,15 @@
 可以使用第三方的命令行工具，`nodemon` 来解决频繁修改代码重启服务器问题
 `nodemon`是一个基于Node.js开发的，需要独立安装：
 
-npm install --global nodemon                   
+	npm install --global nodemon                   
 
 安装后，使用：
 
 ```javascript
-	node app.js
-	# 使用 nodemon
-	nodemon app.js
+
+node app.js
+# 使用 nodemon
+nodemon app.js
 
 ```
 当文件变化时，它会自动重启服务器
@@ -23,32 +24,41 @@ npm install --global nodemon
 get:
 
 ```javascript
-	app.get('/', function(req, res){
-		res.send('for get /')
-	})
+app.get('/', function(req, res){
+	res.send('for get /')
+})
 
 ```
 post:
 
 ```javascript
-	app.get('/', function(req, res){
-		res.send('for post /')
-	})
+app.get('/', function(req, res){
+	res.send('for post /')
+})
 
 ```
 ##  静态资源 （公开指定目录）
 - 第一种：
     这样就可以通过 /public/xx 的方式访问 public 目录中的所有资源
+
+```javascript   	
    	app.use('/public/', express.static('./public/'))	
    	app.use('/static/', express.static('./static/'))
+```
    
 - 第二种：
     当省略第一个参数的时候，则可以通过省略 ./public 的方式来请求
+
+```javascript      	
    	app.use(express.static('./public/'))	
-   
+```
+
 - 第三种
     必须通过 /a/public中的具体路径 来访问，其实是给public起一个别名
+
+```javascript       
     app.use('/a/', express.static('./public/'))
+```
 
 ## express 使用
 	[art-template-官网]
