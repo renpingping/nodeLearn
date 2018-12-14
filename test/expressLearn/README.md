@@ -13,30 +13,30 @@
 	路由其实就是一张表，有具体的映射关系
 	请求路径 + 请求方法 + 请求处理函数
 	get:
-		```
+		```javascript
 			app.get('/', function(req, res){
 				res.send('for get /')
 			})
 		```
 	post:
-		```
+		```javascript
 			app.get('/', function(req, res){
 				res.send('for post /')
 			})
 		```
 ##  静态资源 （公开指定目录）
-	- 第一种：
-        这样就可以通过 /public/xx 的方式访问 public 目录中的所有资源
-       	app.use('/public/', express.static('./public/'))	
-       	app.use('/static/', express.static('./static/'))
-       
-    - 第二种：
-        当省略第一个参数的时候，则可以通过省略 ./public 的方式来请求
-       	app.use(express.static('./public/'))	
-       
-    - 第三种
-        必须通过 /a/public中的具体路径 来访问，其实是给public起一个别名
-        app.use('/a/', express.static('./public/'))
+- 第一种：
+    这样就可以通过 /public/xx 的方式访问 public 目录中的所有资源
+   	app.use('/public/', express.static('./public/'))	
+   	app.use('/static/', express.static('./static/'))
+   
+- 第二种：
+    当省略第一个参数的时候，则可以通过省略 ./public 的方式来请求
+   	app.use(express.static('./public/'))	
+   
+- 第三种
+    必须通过 /a/public中的具体路径 来访问，其实是给public起一个别名
+    app.use('/a/', express.static('./public/'))
 
 ## express 使用
 	[art-template-官网]
@@ -72,7 +72,7 @@
 
 	### 如果需要获取一个函数中异步操作的结果，则必须通过回调函数获取
 	如：
-	```
+	```javascript
 		function fu(callback){
 			// 现在相当于 var callback = funtion (data) { console.log(data) }
 			setTimeout(function() {
@@ -110,16 +110,16 @@
 	+ 根据操作结果给客户端发送响应
 
 ## 异步操作
-	- setTimeout
-	- readFile
-	- writeFile
-	- readdir
-	- ajax
+- setTimeout
+- readFile
+- writeFile
+- readdir
+- ajax
 	往往异步 API 都伴随一个回调函数
 	需要得到其内部异步操作的结果
 
 	这种情况必须通过：回调函数
-	```
+	```javascript
 		function add(x, y, callback){
 			setTimeout(function(){
 				var ret = x + y
