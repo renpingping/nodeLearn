@@ -1,12 +1,14 @@
 # express
 ## 修改完代码自动重启
 	可以使用第三方的命令行工具，`nodemon` 来解决频繁修改代码重启服务器问题
-	`nodemon` 是一个基于Node.js开发的，需要独立安装：
+	`nodemon`是一个基于Node.js开发的，需要独立安装：
 		npm install --global nodemon 
 	安装后，使用：
-	```node app.js
-		# 使用 nodemon
-		nodemon app.js
+	```javascript
+	node app.js
+	# 使用 nodemon
+	nodemon app.js
+
 	```
 	当文件变化时，它会自动重启服务器
 ## express 基本路由
@@ -14,15 +16,17 @@
 	请求路径 + 请求方法 + 请求处理函数
 	get:
 		```javascript
-			app.get('/', function(req, res){
-				res.send('for get /')
-			})
+		app.get('/', function(req, res){
+			res.send('for get /')
+		})
+
 		```
 	post:
 		```javascript
-			app.get('/', function(req, res){
-				res.send('for post /')
-			})
+		app.get('/', function(req, res){
+			res.send('for post /')
+		})
+
 		```
 ##  静态资源 （公开指定目录）
 - 第一种：
@@ -40,8 +44,8 @@
 
 ## express 使用
 	[art-template-官网]
-	- 安装
-	- 配置
+- 安装
+- 配置
 		app.engine('html',require('express-art-template'))
 		第一个参数表示，当渲染以 .html 结尾的文件的时候，使用 art-template 模板引擎
 		第一个参数也可以是 .art 结尾文件，查找时去找 .art 文件
@@ -70,20 +74,20 @@
 ## 封装异步API
 	定时器是异步的，不会等它结束，下面的代码就会执行
 
-	### 如果需要获取一个函数中异步操作的结果，则必须通过回调函数获取
+### 如果需要获取一个函数中异步操作的结果，则必须通过回调函数获取
 	如：
 	```javascript
-		function fu(callback){
-			// 现在相当于 var callback = funtion (data) { console.log(data) }
-			setTimeout(function() {
-				var data = "hello"
-				callback(data)
-			},1000)
-		}
+	function fn(callback){
+		// 现在相当于 var callback = funtion (data) { console.log(data) }
+		setTimeout(function() {
+			var data = "hello"
+			callback(data)
+		},1000)
+	}
 
-		fn(function(data){
-			console.log(data)
-		})
+	fn(function(data){
+		console.log(data)
+	})
 
 	```
 
@@ -115,19 +119,20 @@
 - writeFile
 - readdir
 - ajax
+	
 	往往异步 API 都伴随一个回调函数
 	需要得到其内部异步操作的结果
 
 	这种情况必须通过：回调函数
 	```javascript
-		function add(x, y, callback){
-			setTimeout(function(){
-				var ret = x + y
-				callback(ret)
-			}, 1000)
-		}
-		add(10, 20, function (result) {
-			console.log(result) // 回调函数获取到 ret 的值
-		})
+	function add(x, y, callback){
+		setTimeout(function(){
+			var ret = x + y
+			callback(ret)
+		}, 1000)
+	}
+	add(10, 20, function (result) {
+		console.log(result) // 回调函数获取到 ret 的值
+	})
 
 	```
