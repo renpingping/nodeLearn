@@ -21,6 +21,7 @@ nodemon app.js
 
 路由其实就是一张表，有具体的映射关系
 请求路径 + 请求方法 + 请求处理函数
+
 get:
 
 ```javascript
@@ -42,26 +43,26 @@ app.get('/', function(req, res){
     这样就可以通过 /public/xx 的方式访问 public 目录中的所有资源
 
 ```javascript   	
-   	app.use('/public/', express.static('./public/'))	
-   	app.use('/static/', express.static('./static/'))
+app.use('/public/', express.static('./public/'))	
+app.use('/static/', express.static('./static/'))
 ```
    
 - 第二种：
     当省略第一个参数的时候，则可以通过省略 ./public 的方式来请求
 
 ```javascript      	
-   	app.use(express.static('./public/'))	
+app.use(express.static('./public/'))	
 ```
 
 - 第三种
     必须通过 /a/public中的具体路径 来访问，其实是给public起一个别名
 
 ```javascript       
-    app.use('/a/', express.static('./public/'))
+app.use('/a/', express.static('./public/'))
 ```
 
 ## express 使用
-	[art-template-官网]
+	[art-template-官网]('http://aui.github.io/art-template/')
 - 安装
 - 配置
 		app.engine('html',require('express-art-template'))
