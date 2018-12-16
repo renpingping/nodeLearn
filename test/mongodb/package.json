@@ -1,0 +1,15 @@
+{
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "启动：\r ```shell\r   # mongodb 默认使用执行 mongod 命令所处盘符下的 /data/db 作为自己的数据存储目录\r   # 所以在第一次执行该命令之前先自己手动新建一个/data/db\r   mongod  # 开启服务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.4.0"
+  }
+}
