@@ -63,10 +63,10 @@ students
 
 ```
 ## mongoDB数据库的基本概念
-	- 可以有多个数据库
-	- 一个数据库可以有多个集合（表）
-	- 一个集合中可以有多个文档文档（表记录）
-	- 文档结构很灵活，没有任何限制
+- 可以有多个数据库
+- 一个数据库可以有多个集合（表）
+- 一个集合中可以有多个文档文档（表记录）
+- 文档结构很灵活，没有任何限制
 
 ## 在Node中如何操作Mongodb数据库
 
@@ -83,8 +83,6 @@ students
 - 官网： https://mongoosejs.com/
 - 官方指南： https://mongoosejs.com/docs/guide.html
 - 官方API文档：https://mongoosejs.com/docs/api.html
-
-
 
 安装：
 

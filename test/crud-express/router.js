@@ -55,17 +55,25 @@ router.get('/students/new', function (req, res) {
 })
 
 router.post('/students/new', function (req, res) {
-	Student.save(req.body, function (err) {
+	new Student(req.body).save(function (err) {
 		if (err) {
 			return res.status(500).send('Server error.')
 		}
 		res.redirect('/students')
 	})
+	/*Student.save(req.body, function (err) {
+		if (err) {
+			return res.status(500).send('Server error.')
+		}
+		res.redirect('/students')
+	})*/
 })
 
 router.get('/students/edit', function (req, res) {
 	// 获取数据 渲染
-	Student.findById(parseInt(req.query.id), function (err, student) {
+	// replace() 正则表达式模式：强大，支持全局和忽略大小写
+	// 字符串模式：简单，但不支持全局和忽略大小写
+	Student.findById(req.query.id.replace(/"/g, ''), function (err, student) {
 		if (err) {
 			return res.status(500).send('Server error.')
 		}
@@ -73,23 +81,45 @@ router.get('/students/edit', function (req, res) {
 			student: student
 		})
 	})
+	/*Student.findById(parseInt(req.query.id), function (err, student) {
+		if (err) {
+			return res.status(500).send('Server error.')
+		}
+		res.render('edit.html',{
+			student: student
+		})
+	})*/
 })
 router.post('/students/edit', function (req, res) {
-	Student.updateById(req.body, function (err) {
+	var id = req.body.id.replace(/"/g, '')
+	Student.findByIdAndUpdate(id, req.body, function (err) {
 		if (err) {
 			return res.status(500).send('Server error.')
 		}
 		res.redirect('/students')
 	})
+	/*Student.updateById(req.body, function (err) {
+		if (err) {
+			return res.status(500).send('Server error.')
+		}
+		res.redirect('/students')
+	})*/
 })
 router.get('/students/delete', function (req, res) {
 	console.log(req.query.id)
-	Student.delete(parseInt(req.query.id), function (err) {
+	var id = req.query.id.replace(/"/g, '')
+	Student.findByIdAndRemove(id, function (err) {
 		if (err) {
 			return res.status(500).send('Server error.')
 		}
 		res.redirect('/students')
 	})
+	/*Student.delete(parseInt(req.query.id), function (err) {
+		if (err) {
+			return res.status(500).send('Server error.')
+		}
+		res.redirect('/students')
+	})*/
 })
 
 // 3、 把 router 导出
