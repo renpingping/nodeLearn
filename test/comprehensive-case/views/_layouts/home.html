@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- meta -->
+  <meta charset="utf-8"/>
+  <meta name='description' content='CNode：Node.js专业中文社区'>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{{block 'title'}} CNode：Node.js专业中文社区 {{/block}}</title>
+   <link rel="icon" href="../../public/images/cnode_icon_32.png" type="image/x-icon"/>
+  <!-- style -->
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+  {{block 'head'}}  {{/block}}
+</head>
+<body>
+	{{include '../_partials/header.html' }}
+	{{block 'body'}}  {{/block}}
+	{{include '../_partials/footer.html' }}
+  <!-- scripts -->
+	<script src="../../node_modules/jquery/dist/jquery.js"></script>
+	<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	{{block 'script'}}  {{/block}}
+</body>
+</html>

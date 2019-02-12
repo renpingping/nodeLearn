@@ -1,0 +1,13 @@
+@font-face {
+	font-family: futura2;
+	src: url('./tt0142m.ttf'),
+		 url('./tt0144m.ttf');
+	font-weight: 600;
+	font-style: normal;
+}
+
+.hello {
+	color: red;
+	font-family: 'futura2';
+	background: url('./jackson.jpg');
+}

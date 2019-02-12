@@ -7,6 +7,7 @@ var fs = require('fs');
 //		文件写入成功
 //		error是null
 //	失败：
+//	
 //		文件写入失败
 //		error就是错误对象
 fs.writeFile('../@@你好.txt','大家好，给大家介绍一个，node.js',function(error){

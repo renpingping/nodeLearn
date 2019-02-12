@@ -1,0 +1,41 @@
+
+<!-- navbar -->
+<div class='navbar'>
+  <div class='navbar-inner'>
+    <div class='container'>
+      <a class='brand' href='/'>
+          <img src="../public/images/cnodejs_light.svg" />
+      </a>
+
+      <form id='search_form' class='navbar-search' action="/search">
+        <input type='text' id='q' name='q' class='search-query span3' value=''/>
+      </form>
+      <ul class='nav pull-right'>
+        {{ if user }}
+          <li><a href="/about" target="">发起</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://avatars0.githubusercontent.com/u/17724186?v=4&s=120" width="20" height="20" alt=""> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-current-user">
+                当前用户：{{ user.nickName }}
+              </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">个人主页</a></li>
+              <li><a href="/settings/profile">设置</a></li>
+              <li><a href="/logout">退出</a></li>
+            </ul>
+          </li>
+        {{ else }}
+          <a href='/register' class='btn btn-primary btn-xs'>注册</a>
+          <a href='/login' class='btn btn-xs btn-success'>登录</a>
+        {{ /if }}
+      
+      </ul>
+      <a class="btn btn-navbar" id="responsive-sidebar-trigger">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+  </div>
+</div>

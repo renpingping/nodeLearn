@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax回调</title>
+</head>
+<body>
+	<script>
+		function get (url, callback){
+			function reqListener () {
+			  callback(this.responseText);
+			}
+
+			var oReq = new XMLHttpRequest();
+			oReq.onload = reqListener;
+			oReq.open("get", url, true);
+			oReq.send();
+
+		}
+		get('data.json', function (data) {
+			console.log(data)
+		})
+	</script>
+</body>
+</html>
